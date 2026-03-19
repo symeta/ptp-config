@@ -2,7 +2,7 @@
 
 - Please refer to below guidance information for EC2 instance types that support Amazon Time Sync Service
 
-[Official Amazon Time Sync Service Guidance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-ec2-ntp.html#connect-to-the-ptp-hardware-clock)
+  [Official Amazon Time Sync Service Guidance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-ec2-ntp.html#connect-to-the-ptp-hardware-clock)
 
 ## EC2 PTP Enabling Congfig
 
