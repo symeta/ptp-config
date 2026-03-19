@@ -46,7 +46,7 @@
   ```sh
   sudo modprobe -r ena && sudo modprobe ena phc_enable=1
   ```
-  >⚠️ This will briefly drop network connectivity since it reloads the network driver. Alternatively, to make it persistent without reloading     >now:
+  >⚠️ This will briefly drop network connectivity since it reloads the network driver. Alternatively, to make it persistent without reloading now:
   >```sh
   >echo "options ena phc_enable=1" | sudo tee /etc/modprobe.d/ena.conf
   >```
