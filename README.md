@@ -8,7 +8,7 @@
 
 >below operations are done using Amazon Linux OS
 
-- Current Status Checking
+- **Current Status Checking**
 
   - as-is ena status checking, ENA driver version: 2.16.1g and above — supports PTP/PHC.
   ```sh
@@ -17,13 +17,7 @@
   - check phc_enable, as-is should be 0
   ```sh
   cat /sys/module/ena/parameters/phc_enable
-  ```
-  >⚠️ This will briefly drop network connectivity since it reloads the network driver. Alternatively, to make it persistent without reloading     >now:
-  >```sh
-  >echo "options ena phc_enable=1" | sudo tee /etc/modprobe.d/ena.conf
-  >```
-  >Then reboot, or reload the module.
-  
+  ```  
   - check the time source of chronyc, as-is should be NTP
   ```sh
   chronyc sources -v
@@ -47,11 +41,17 @@
   ^- ec2-54-90-191-9.compute->     4   6   177    48    -20us[  -23us] +/-  493us
   ```
 
-- PTP Enablement
+- **PTP Enablement**
   - Enable PHC in the ENA driver
   ```sh
   sudo modprobe -r ena && sudo modprobe ena phc_enable=1
   ```
+  >⚠️ This will briefly drop network connectivity since it reloads the network driver. Alternatively, to make it persistent without reloading     >now:
+  >```sh
+  >echo "options ena phc_enable=1" | sudo tee /etc/modprobe.d/ena.conf
+  >```
+  >Then reboot, or reload the module.
+  
   - After PHC is enabled, /dev/ptp0 should appear. Verify with:
   ```sh
   ls /dev/ptp0
@@ -68,7 +68,7 @@
   ```sh
   sudo systemctl restart chronyd
   ```
-- Status Re-check
+- **Status Re-check**
   - check phc_enable, as-is should be 1
   ```sh
   cat /sys/module/ena/parameters/phc_enable
