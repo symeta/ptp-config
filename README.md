@@ -8,10 +8,10 @@
 
 - Amazon Linux OS
 
+- - as-is ena status checking, ENA driver version: 2.16.1g and above — supports PTP/PHC.
 ```sh
-#as-is ena status checking, ENA driver version: 2.16.1g and above — supports PTP/PHC.
 modinfo ena | grep version
-
+```
 #check phc_enable, as-is should be 0
 cat /sys/module/ena/parameters/phc_enable
 
