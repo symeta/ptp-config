@@ -56,10 +56,6 @@
   ```sh
   ls /dev/ptp0
   ```
-    reverts back with below output:
-  ```sh
-  /dev/ptp0
-  ```
   - Configure chrony to use PTP by adding a refclock line. Create /etc/chrony.d/ptp.conf:
   ```txt
   refclock PHC /dev/ptp0 poll 0 dpoll -2 offset 0 prefer
