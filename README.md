@@ -18,7 +18,7 @@
   ```sh
   cat /sys/module/ena/parameters/phc_enable
   ```  
-  - check the time source of chronyc, as-is should be NTP
+  - check the time source of chronyc, as-is should be 169.254.169.123 via NTP as timing protocol.
   ```sh
   chronyc sources -v
   ```
@@ -65,11 +65,11 @@
   sudo systemctl restart chronyd
   ```
 - **Status Re-check**
-  - check phc_enable, as-is should be 1
+  - check phc_enable, now should be 1
   ```sh
   cat /sys/module/ena/parameters/phc_enable
   ```
-  - check the time source of chronyc, as-is should be NTP
+  - check the time source of chronyc, now should be PHC via PTP as the timing protocol.
   ```sh
   chronyc sources -v
   ```
