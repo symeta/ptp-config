@@ -22,7 +22,7 @@
   ```sh
   chronyc sources -v
   ```
-  - output looks like below, indicating NTP is the current timing protocol.
+  - output looks like below, indicating NTP is the current timing protocol, and time source is 169.254.169.123
   ```sh
     .-- Source mode  '^' = server, '=' = peer, '#' = local clock.
    / .- Source state '*' = current best, '+' = combined, '-' = not combined,
