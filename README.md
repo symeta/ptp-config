@@ -22,7 +22,7 @@
   ```sh
   chronyc sources -v
   ```
-  - output looks like below, indicating NTP is the current time source.
+  - output looks like below, indicating NTP is the current timing protocol.
   ```sh
     .-- Source mode  '^' = server, '=' = peer, '#' = local clock.
    / .- Source state '*' = current best, '+' = combined, '-' = not combined,
@@ -73,7 +73,7 @@
   ```sh
   chronyc sources -v
   ```
-  - output looks like below, indicating NTP is the current time source.
+  - output looks like below, indicating PTP is the current timing protocol, and PHC is the time source.
   ```sh
     .-- Source mode  '^' = server, '=' = peer, '#' = local clock.
    / .- Source state '*' = current best, '+' = combined, '-' = not combined,
